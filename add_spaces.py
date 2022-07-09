@@ -1,7 +1,9 @@
-#! /usr/bin/python
+#! /usr/bin/env python3
 # -*- coding: UTF-8 -*-
-# author: robot527
-# created at 2016-05-30
+
+# orginally created by robot527 at 2016-05-30
+# modified by Jackie at 2022-07-09
+
 
 """
 自动给中文英文之间加入合理的空格
@@ -154,7 +156,7 @@ def add_spaces_to_file(file_name, code="gbk"):
     try:
         with open(new_file, "w") as nfile:
             nfile.writelines(line_list)
-            print 'Finished adding spaces, generated new file: %s' % new_file
+            print('Finished adding spaces, generated new file: %s' % new_file)
             return 'Success.'
     except IOError as err:
         return str(err)
@@ -166,18 +168,18 @@ if __name__ == '__main__':
     codeset = ['gb2312', 'gbk', 'utf8', 'gb18030', 'hz',\
                 'iso2022_jp_2', 'big5', 'big5hkscs']
     if argc == 1:
-        print 'Usage: python add_spaces.py /path/to/file code(e.g. gbk, utf8)'
-        print '    or python add_spaces.py /path/to/file'
+        print('Usage: python add_spaces.py /path/to/file code(e.g. gbk, utf8)')
+        print('    or python add_spaces.py /path/to/file')
     elif argc == 2:
         for item in codeset:
             if add_spaces_to_file(sys.argv[1], item) == 'Success.':
-                print 'Processing completed.'
+                print('Processing completed.')
                 break
     elif argc == 3:
         if sys.argv[2] in codeset:
-            print add_spaces_to_file(sys.argv[1], sys.argv[2])
+            print(add_spaces_to_file(sys.argv[1], sys.argv[2]))
         else:
-            print 'Parameter code (%s) error!' % sys.argv[2]
-            print 'Supported codes are ' + ', '.join(codeset)
+            print('Parameter code (%s) error!' % sys.argv[2])
+            print('Supported codes are ' + ', '.join(codeset))
     else:
-        print 'Usage: python add_spaces.py /path/to/file code'
+        print('Usage: python add_spaces.py /path/to/file code')
