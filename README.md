@@ -10,13 +10,20 @@
 
 ## 脚本用法
 
-```
-	python add_spaces.py /path/to/file code  # code 为文件编码，如：gbk, utf8
-	# 或者自动猜测文本文件的编码
-	python add_spaces.py /path/to/file
-```
+  ```
+  python3 /path/to/add_spaces.py /path/to/file code  # code 为文  件编码，如：gbk, utf8
+  # 或者自动猜测文本文件的编码
+  python3 /path/to/add_spaces.py /path/to/file
+  # 或者给脚本添加执行权限后可以直接：
+  /path/to/add_spaces.py /path/to/file code
+  ```
 
 ## 更新历史  
+
+### 更新时间：2022-07-10
+
+  - 使用 Python3 语法，不再支持 Python2
+
 ### 更新时间：2016-08-28
   - 支持对中文里有粗体或斜体英文单词的语句的处理
   - 支持对中文里有粗体或斜体中文字词的语句的处理
